@@ -10,7 +10,6 @@ Our client, Koala Holla (1976 Llama Comma Drive, Walla Walla WA) is a non-profit
 
 Technologies
 ------------
-* JQuery
 * Node
 * Express
 * SQL
