@@ -23,7 +23,7 @@ Koala Holla has provided a table of their current inventory:
 | 1  | Scotty  | M      | 4   | Y                | Born in Guatemala                |
 | 2  | Jean    | F      | 5   | Y                | Allergic to lots of lava         |
 | 3  | Ororo   | F      | 7   | N                | Loves listening to Paula (Abdul) |
-| 4  | Logan   | M      | 15  | N                | Loves the sauna                  |
+| 4  | K'Leaf   | NB      | 15  | N                | Never refuses a treat.                  |
 | 5  | Charlie | M      | 9   | Y                | Favorite band is Nirvana         |
 | 6  | Betsy   | F      | 4   | Y                | Has a pet iguana                 |
 
