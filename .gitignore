@@ -1,6 +1,9 @@
 # OSX files
 .DS_Store
 
+#Local IDE settings
+.vscode/
+
 # Node modules
 node_modules/
 
