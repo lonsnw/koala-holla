@@ -1,3 +1,5 @@
+const { trace } = require("../../routes/koala.router");
+
 console.log( 'js' );
 
 function getKoalas(){
@@ -11,12 +13,20 @@ function getKoalas(){
     // clear out the table before starting to loop 
     koalaDiv.innerHTML = '';
     for(let koala of koalasFromServer) {
+          // create a loop for koala transfer status
+      let transferStatus = '';
+      if (koala.transfer === 'yes' || koala.transfer === 'Yes') {
+        transferStatus = 'Pending';
+      }
+      else if (koala.transfer === 'no' || koala.transfer === 'No') {
+        transferStatus = `<button onClick="transferKoala(event)">Transfer ready</button>`
+      };
       koalaDiv.innerHTML += `
       <tr>
       <td>${koala.name}</td>
       <td>${koala.age}</td>
       <td>${koala.color}</td>
-      <td>${koala.transfer}</td>
+      <td>${transferStatus}</td>
       <td>${koala.notes}</td>
       <td><button onClick="deleteKoala(event)">Delete</button></td>
       </tr>`
