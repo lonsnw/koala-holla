@@ -1,0 +1,57 @@
+header {
+    color: #1c1c64;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#koala-table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#koala-table td,
+#koala-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#koala-table tr:nth-child(even) {
+    background-color: #d1d1dc;
+}
+
+#koala-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #1c1c64;
+    color: white;
+}
+
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: grid;
+    border: 1px solid #1c1c64;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 90px;
+    height: 50px;
+    background-color: #d1d1dc;
+    text-align: center;
+    border-style: solid;
+    border-color: #1c1c64;
+    border-radius: 50px;
+}
