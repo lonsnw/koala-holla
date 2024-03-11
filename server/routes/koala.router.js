@@ -68,5 +68,14 @@ koalaRouter.post('/', (req, res) => {
 
 
 // DELETE
+// not sure how you do this with a router; with just the server, 
+// it would be '/koalas/:id'
+koalaRouter.delete('/:id', (req, res) => {
+    console.log(req.params);
+// the sample we half-learned used the index
+
+    res.sendStatus(201);
+})
+
 
 module.exports = koalaRouter;

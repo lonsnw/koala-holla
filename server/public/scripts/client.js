@@ -48,9 +48,32 @@ function transferKoala(event) {
   console.log('in transfer koala');
   event.preventDefault();
   // this changes it only on the DOM.
-  event.target.parentElement.innerHTML = `<td>Pending</td>`;
-  // event.target.parentElement.parentElement
-  // getKoalas();
+  event.target.parentElement.innerHTML = `<td>Updating</td>`;
+  // seems like maybe i need to get the ID number to update the object? 
+  // i think this is going to be a PUT request.
+  // -------------------------------------------------------------
+  // i tried the below and it was not the solution.
+  // let koalaName = event.target.parentElement.document.querySelector('#nameIn').value;
+  // let koalaAge = event.target.parentElement.document.querySelector('#ageIn').value;
+  // let koalaColor = event.target.parentElement.document.querySelector('#colorIn').value;
+  // let koalaTransfer = event.target.parentElement.document.querySelector('#readyForTransferIn').value;
+  // let koalaNotes = event.target.parentElement.document.querySelector('#notesIn').value;
+  // let koala = {
+  //   name: koalaName,
+  //   age: koalaAge,
+  //   color: koalaColor,
+  //   transfer: koalaTransfer,
+  //   notes: koalaNotes,
+  // }
+  // axios.post('/koalas/transfers', koala).then((response => {
+  //   console.log(response);
+  //   // function that will display all koalas in the table
+  //   getKoalas();
+  // })).catch((error) => {
+  //   console.error(error);
+  // });
+  // // event.target.parentElement.parentElement
+  // // getKoalas();
 }
 
 
@@ -79,4 +102,6 @@ function saveKoala(event){
   });
 }
 
-deleteKoala(event)
+function deleteKoala(event) {
+  console.log(`we haven't really learned these yet`);
+}
