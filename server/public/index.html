@@ -7,7 +7,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script defer src="scripts/client.js" charset="utf-8"></script>
   </head>
-  <body>
+  <body onLoad="getKoalas()">
     <header>
       <img src="images/icon.png" class="icon" />
       <h1>Koala Holla</h1>
@@ -28,6 +28,7 @@
       <table>
         <thead>
           <tr>
+            <th>ID</th>
             <th>Name</th>
             <th>Age</th>
             <th>Favorite Color</th>

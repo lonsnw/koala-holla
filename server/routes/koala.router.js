@@ -5,7 +5,50 @@ const koalaRouter = express.Router();
 
 
 // creating a global variable to hold koalas
-let koalaHolla = [];
+let koalaHolla = [
+    {
+        name: 'Scotty',
+        age: 4,
+        color: 'Red',
+        transfer: 'Yes',
+        notes: 'Born in Guatemala',
+    },
+    {
+        name: 'Jean',
+        age: 5,
+        color: 'Green',
+        transfer: 'Yes',
+        notes: 'Allergic to lots of lava',
+    },
+    {
+        name: 'Ororo',
+        age: 7,
+        color: 'Yellow',
+        transfer: 'No',
+        notes: 'Loves listening to Paula (Abdul)',
+    },
+    {
+        name: `K'Leaf`,
+        age: 15,
+        color: 'Purple',
+        transfer: 'No',
+        notes: 'Never refuses a treat.',
+    },
+    {
+        name: 'Charlie',
+        age: 9,
+        color: 'Orange',
+        transfer: 'Yes',
+        notes: 'Favorite band is Nirvana',
+    },
+    {
+        name: 'Betsy',
+        age: 4,
+        color: 'Blue',
+        transfer: 'Yes',
+        notes: 'Has a pet iguana',
+    },
+];
 
 // GET
 koalaRouter.get('/', (req, res) => {

@@ -1,4 +1,4 @@
-const { trace } = require("../../routes/koala.router");
+const { trace, get } = require("../../routes/koala.router");
 
 console.log( 'js' );
 
@@ -23,6 +23,7 @@ function getKoalas(){
       };
       koalaDiv.innerHTML += `
       <tr>
+      <td>${koalasFromServer.indexOf(koala)+1}</td>
       <td>${koala.name}</td>
       <td>${koala.age}</td>
       <td>${koala.color}</td>
@@ -41,6 +42,17 @@ function getKoalas(){
   document.querySelector('#readyForTransferIn').value = '';
   document.querySelector('#notesIn').value = '';
 } // end getKoalas
+
+// function for changing transfer status
+function transferKoala(event) {
+  console.log('in transfer koala');
+  event.preventDefault();
+  // this changes it only on the DOM.
+  event.target.parentElement.innerHTML = `<td>Pending</td>`;
+  // event.target.parentElement.parentElement
+  // getKoalas();
+}
+
 
 function saveKoala(event){
   console.log( 'in saveKoala' );
@@ -66,7 +78,5 @@ function saveKoala(event){
     console.error(error);
   });
 }
-
-// getKoalas();
 
 deleteKoala(event)
