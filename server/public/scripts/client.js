@@ -63,7 +63,7 @@ function saveKoala(event){
   let koalaName = document.querySelector('#nameIn').value;
   let koalaAge = document.querySelector('#ageIn').value;
   let koalaColor = document.querySelector('#colorIn').value;
-  let koalaTransfer = document.querySelector('#readyForTransferIn').value;
+  let koalaTransfer = document.querySelector('#readyForTransferIn').checked;
   let koalaNotes = document.querySelector('#notesIn').value;
   let koala = {
     name: koalaName,
