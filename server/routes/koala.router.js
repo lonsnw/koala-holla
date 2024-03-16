@@ -93,7 +93,7 @@ koalaRouter.put('/transfer/:id', (req, res) => {
     console.log('req.body', req.body);
     console.log('req.params', req.params);
     let queryText = `
-        UPDATE "books" SET "transfer" = 'True'
+        UPDATE "koalas" SET "transfer" = 'True'
         WHERE "id" = $1;
         `;
     pool.query(queryText, [req.params.id])

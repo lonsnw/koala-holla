@@ -15,22 +15,23 @@ function getKoalas(){
     for(let koala of koalasFromServer) {
           // create a loop for koala transfer status
       let transferStatus = '';
-      if (koala.transfer === 'true' || koala.transfer === 'True') {
+      if (koala.transfer == true) {
         transferStatus = 'Pending transfer';
       }
-      else if (koala.transfer === 'False' || koala.transfer === 'false') {
+      else if (koala.transfer == false) {
         transferStatus = `<button onClick="transferKoala(${koala.id})">Transfer ready</button>`
       };
       koalaDiv.innerHTML += `
       <tr>
-      <td>${koalasFromServer.indexOf(koala)+1}</td>
+      <td>${koala.id}</td>
       <td>${koala.name}</td>
       <td>${koala.age}</td>
       <td>${koala.color}</td>
       <td>${transferStatus}</td>
       <td>${koala.notes}</td>
       <td><button onClick="deleteKoala(${koala.id})">Delete</button></td>
-      </tr>`
+      </tr>`;
+      console.log(transferStatus);
     };
   }).catch((error) => {
     console.error(error);
