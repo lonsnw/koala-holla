@@ -95,11 +95,17 @@ koalaRouter.post('/', (req, res) => {
 // not sure how you do this with a router; with just the server, 
 // it would be '/koalas/:id'
 koalaRouter.delete('/:id', (req, res) => {
-    console.log(req.params);
-// the sample we half-learned used the index
-
-    res.sendStatus(201);
-})
+    console.log('req.params', req.params);
+    let queryText = 'DELETE FROM "books" WHERE "id" = $1;';
+    pool.query(queryText, [req.params.id])
+        .then(() => {
+            res.sendStatus(200);
+        })
+        .catch((error) => {
+            console.error('Error in DELETE /koalas/:id', error);
+            res.sendStatus(500);
+        });
+});
 
 
 module.exports = koalaRouter;
