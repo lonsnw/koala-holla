@@ -1,4 +1,5 @@
-const { trace, get } = require("../../routes/koala.router");
+// this was throwing an error so i commented it out
+// const { trace, get } = require("../../routes/koala.router");
 
 console.log( 'js' );
 
@@ -72,6 +73,9 @@ function saveKoala(event){
     transfer: koalaTransfer,
     notes: koalaNotes,
   }
+  Swal.fire({
+    text: `${koala.name} has been added to the database.`,
+  });
   axios.post('/koalas', koala).then((response => {
     console.log(response);
     // function that will display all koalas in the table
