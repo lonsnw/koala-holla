@@ -29,7 +29,7 @@ function getKoalas(){
       <td>${koala.color}</td>
       <td>${transferStatus}</td>
       <td>${koala.notes}</td>
-      <td><button onClick="deleteKoala(event)">Delete</button></td>
+      <td><button onClick="deleteKoala(${koala.id})">Delete</button></td>
       </tr>`
     };
   }).catch((error) => {
@@ -102,6 +102,11 @@ function saveKoala(event){
   });
 }
 
-function deleteKoala(event) {
-  console.log(`we haven't really learned these yet`);
+function deleteKoala(koalaId) {
+  axios.delete(`/koalas/${koalaId}`).then((response) => {
+    getKoalas();
+  }).catch((error) => {
+    console.log('Error in DELETE', error);
+    alert(`Something went wrong removing this koala's information`);
+  });
 }
