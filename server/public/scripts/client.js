@@ -87,7 +87,7 @@ function saveKoala(event){
 
 function deleteKoala(koalaId) {
     Swal.fire({
-      title: "Are you sure you want to delete this koala's information?",
+      title: `Are you sure you want to delete this koala's information?`,
       text: "You won't be able to recover this information!",
       icon: "warning",
       showCancelButton: true,
@@ -98,7 +98,7 @@ function deleteKoala(koalaId) {
       if (result.isConfirmed) {
         Swal.fire({
           title: "Deleted!",
-          text: "Your file has been deleted.",
+          text: `This koala's file has been deleted.`,
           icon: "success"
         });
         axios.delete(`/koalas/${koalaId}`).then((response) => {
@@ -110,4 +110,3 @@ function deleteKoala(koalaId) {
       }
     });
 }
-
