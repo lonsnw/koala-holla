@@ -82,10 +82,28 @@ function saveKoala(event){
 }
 
 function deleteKoala(koalaId) {
-  axios.delete(`/koalas/${koalaId}`).then((response) => {
-    getKoalas();
-  }).catch((error) => {
-    console.log('Error in DELETE', error);
-    alert(`Something went wrong removing this koala's information`);
-  });
+    Swal.fire({
+      title: "Are you sure you want to delete this koala's information?",
+      text: "You won't be able to recover this information!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#496b9d",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Delete!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "Deleted!",
+          text: "Your file has been deleted.",
+          icon: "success"
+        });
+        axios.delete(`/koalas/${koalaId}`).then((response) => {
+          getKoalas();
+          }).catch((error) => {
+            console.log('Error in DELETE', error);
+            alert(`Something went wrong removing this koala's information`);
+          });
+      }
+    });
 }
+
