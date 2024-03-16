@@ -89,7 +89,22 @@ koalaRouter.post('/', (req, res) => {
 });
 
 // PUT
-
+koalaRouter.put('/transfer/:id', (req, res) => {
+    console.log('req.body', req.body);
+    console.log('req.params', req.params);
+    let queryText = `
+        UPDATE "books" SET "transfer" = 'True'
+        WHERE "id" = $1;
+        `;
+    pool.query(queryText, [req.params.id])
+        .then(() => {
+            res.sendStatus(200);
+        })
+        .catch((error) => {
+            console.error('Error in PUT /koalas/transfer/:id', error);
+            res.sendStatus(500);
+        })
+});
 
 // DELETE
 koalaRouter.delete('/:id', (req, res) => {
